@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -36,10 +37,29 @@ namespace MyPortfolioASPCore
             {
                 app.UseExceptionHandler("/Error");
             }
+            //app.UseMiddleware<MyClass>();
 
             app.UseStaticFiles();
-
+            //app.UseWelcomePage();
             app.UseMvc();
+            
+            
+        }
+    }
+
+    public class MyClass
+    {
+        private RequestDelegate _next;
+
+        public MyClass(RequestDelegate next)
+        {
+            _next = next;
+        }
+
+        public async Task InvokeAsync(HttpContext context)
+        {
+            await context.Response.WriteAsync("Middleware");
+            await _next(context);
         }
     }
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -7,7 +7,7 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/site.css" type="text/css" media="all" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -16,28 +16,74 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-page="/Index" class="navbar-brand">MyPortfolioASPCore</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
+<body id="top">
+    <div class="wrapper row0">
+        <div id="topbar" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <div class="fl_left">
+                <ul class="faico clear">
+                    <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="faicon-pinterest" href="#"><i class="fa fa-pinterest"></i></a></li>
+                    <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a class="faicon-rss" href="#"><i class="fa fa-rss"></i></a></li>
                 </ul>
             </div>
+            <div class="fl_right">
+                <ul class="nospace inline pushright">
+                    <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+                    <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+                </ul>
+            </div>
+            <!-- ################################################################################################ -->
         </div>
+    </div>
+
+    <!-- ################################################################################################ -->
+    
+    <nav class="navbar navbar-default row1" style="margin-bottom: 0px;">
+        <header id="header" class="hoc clear">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="logo"><h1><a class="navbar-brand" href="/">Programmist blog</a></h1></div>
+
+
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </header>
+        
     </nav>
-    <div class="container body-content">
+    <!-- ################################################################################################ -->
+    <div class="body-content">
         @RenderBody()
         <hr />
         <footer>
